@@ -271,25 +271,36 @@
 
           <script>
             if (getCookie("link")) {
-              document.write(
-                `<scr` +
-                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                  `ipt>
-<div id="gpt-passback6">
-  <scr` +
-                  `ipt>
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('gpt-passback6');
-    });
-  </scr` +
-                  `ipt>
-</div>
+              function renderAd() {
+            // Create the ad container if it doesn't exist
+            let adContainer = document.getElementById('ad-container');
+            if (!adContainer) {
+                adContainer = document.createElement('div');
+                adContainer.id = 'ad-container';
+                document.body.appendChild(adContainer);
+            }
 
-`
-              );
+            // Set the ad content
+            adContainer.innerHTML = `
+                <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+                <div id="gpt-passback6"></div>
+                <script>
+                    window.googletag = window.googletag || {cmd: []};
+                    googletag.cmd.push(function() {
+                        googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6')
+                            .addService(googletag.pubads());
+                        googletag.enableServices();
+                        googletag.display('gpt-passback6');
+                    });
+                </script>
+            `;
+        }
+
+        // Rerender the ad every 10 seconds
+        setInterval(renderAd, 10000);
+
+        // Initial render
+        renderAd();
 
               document.write(
                 `<scr` +
@@ -328,7 +339,6 @@
 `
               );
             } else {
-              console.log("No 'link' cookie found");
             }
           </script>
 
