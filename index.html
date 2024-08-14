@@ -246,38 +246,26 @@
       <div class="card">
         <div class="card-body">
           <center>
-            <div id="gpt-passback1"></div>
-
             <script>
-              function renderAd() {
-                const adContainer = document.getElementById("gpt-passback1");
-                adContainer.innerHTML = ""; // Clear existing content
+              document.write(
+                `<scr` +
+                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                  `ipt>
+<div id="gpt-passback1">
+  <scr` +
+                  `ipt>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/21984817904/www.futurex.pw_Leaderboard', [[970, 90], [728, 90]], 'gpt-passback1').addService(googletag.pubads());
+    googletag.enableServices();
+    googletag.display('gpt-passback1');
+    });
+  </scr` +
+                  `ipt>
+</div>
 
-                // Create a script element for GPT
-                const gptScript = document.createElement("script");
-                gptScript.async = true;
-                gptScript.src =
-                  "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
-                adContainer.appendChild(gptScript);
-
-                // Create another script element to define and display the ad
-                const adScript = document.createElement("script");
-                adScript.text = `
-                  window.googletag = window.googletag || {cmd: []};
-                  googletag.cmd.push(function() {
-                    googletag.defineSlot('/21984817904/www.futurex.pw_Leaderboard', [[970, 90], [728, 90]], 'gpt-passback1').addService(googletag.pubads());
-                    googletag.enableServices();
-                    googletag.display('gpt-passback1');
-                  });
-                `;
-                adContainer.appendChild(adScript);
-              }
-
-              renderAd(); // Initial render
-
-              setInterval(function () {
-                renderAd(); // Re-render the ad every 10 seconds
-              }, 10000); // 10000 milliseconds = 10 seconds
+`
+              );
             </script>
           </center>
 
