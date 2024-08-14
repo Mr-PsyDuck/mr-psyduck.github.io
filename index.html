@@ -153,6 +153,87 @@
         console.log("No cookies found");
       }
     </script>
+
+
+
+
+<script>
+ if (getCookie("link")) {
+    // Inject the necessary HTML and CSS for the sticky ad container
+    document.write(`
+        <style>
+            /* Style for the sticky ad container */
+            .sticky-ad-leader {
+                position: fixed;
+                top: 0; /* Adjust as needed */
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: auto; /* Adjust width as needed */
+                z-index: 1000;
+                background-color: white; /* Optional, for better visibility */
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Optional, for better visibility */
+                text-align: center;
+            }
+        </style>
+        <div class="sticky-ad-leader">
+            <!-- Orquidea - Leaderboard -->
+            <div id="gpt-passback1"></div>
+        </div>
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+        <script>
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function() {
+                // Define the ad slot and save the reference
+                var adSlot = googletag.defineSlot('/21984817904/www.futurex.pw_Leaderboard', [[970, 90], [728, 90]], 'gpt-passback1')
+                                      .addService(googletag.pubads());
+
+                googletag.enableServices();
+                googletag.display('gpt-passback1');
+
+                // Function to refresh the ad
+                function refreshAd() {
+                    googletag.pubads().refresh([adSlot]);  // Refresh the specific ad slot
+                }
+
+                // Function to schedule the next refresh
+                function scheduleNextRefresh() {
+                    // Generate a random interval between 5000 and 15000 milliseconds (5 to 15 seconds)
+                    const randomInterval = Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000;
+                    setTimeout(function() {
+                        refreshAd();
+                        scheduleNextRefresh();  // Schedule the next refresh
+                    }, randomInterval);
+                }
+
+                // Start the first refresh schedule
+                scheduleNextRefresh();
+            });
+        </script>
+    `);
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-144023646-1"
