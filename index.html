@@ -270,27 +270,50 @@
           </center>
 
           <script>
+            // Function to render or update the ad
+            function renderAd() {
+              if (getCookie("link")) {
+                // Clear existing ad content if present
+                const existingAd = document.getElementById("gpt-passback6");
+                if (existingAd) {
+                  existingAd.remove();
+                }
+
+                // Create a new ad container
+                const adContainer = document.createElement("div");
+                adContainer.id = "gpt-passback6";
+                document.body.appendChild(adContainer);
+
+                // Load and render the ad
+                const script = document.createElement("script");
+                script.innerHTML = `
+                  window.googletag = window.googletag || {cmd: []};
+                  googletag.cmd.push(function() {
+                    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
+                    googletag.enableServices();
+                    googletag.display('gpt-passback6');
+                  });
+                `;
+                adContainer.appendChild(script);
+
+                // Load the GPT library
+                const gptScript = document.createElement("script");
+                gptScript.async = true;
+                gptScript.src =
+                  "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
+                document.head.appendChild(gptScript);
+              }
+            }
+
+            // Initial render
+            renderAd();
+
+            // Rerender every 10 seconds
+            setInterval(renderAd, 10000); // 10000 milliseconds = 10 seconds
+          </script>
+
+          <script>
             if (getCookie("link")) {
-              document.write(
-                `<scr` +
-                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                  `ipt>
-<div id="gpt-passback6">
-  <scr` +
-                  `ipt>
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('gpt-passback6');
-    });
-  </scr` +
-                  `ipt>
-</div>
-
-`
-              );
-
               document.write(
                 `<scr` +
                   `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
