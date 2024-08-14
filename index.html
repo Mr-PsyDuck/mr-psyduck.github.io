@@ -270,37 +270,27 @@
           </center>
 
           <script>
-            function renderAd() {
-              if (getCookie("link")) {
-                document.write(
-                  `<scr` +
-                    `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                    `ipt>
-          <div id="gpt-passback6">
-            <scr` +
-                    `ipt>
-              window.googletag = window.googletag || {cmd: []};
-              googletag.cmd.push(function() {
-                googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
-                googletag.enableServices();
-                googletag.display('gpt-passback6');
-              });
-            </scr` +
-                    `ipt>
-          </div>`
-                );
-              }
-            }
-
-            // Initial render
-            renderAd();
-
-            // Rerender every 10 seconds
-            setInterval(renderAd, 10000); // 10000 milliseconds = 10 seconds
-          </script>
-
-          <script>
             if (getCookie("link")) {
+              document.write(
+                `<scr` +
+                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                  `ipt>
+<div id="gpt-passback6">
+  <scr` +
+                  `ipt>
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
+    googletag.enableServices();
+    googletag.display('gpt-passback6');
+    });
+  </scr` +
+                  `ipt>
+</div>
+
+`
+              );
+
               document.write(
                 `<scr` +
                   `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
