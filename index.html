@@ -271,25 +271,36 @@
 
           <script>
             if (getCookie("link")) {
-              document.write(
-                `<scr` +
-                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                  `ipt>
-<div id="gpt-passback6">
-  <scr` +
-                  `ipt>
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('gpt-passback6');
-    });
-  </scr` +
-                  `ipt>
-</div>
+              function loadAd() {
+                document.write(
+                  `
+      <scr` +
+                    `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                    `ipt>
+      <div id="gpt-passback6">
+        <scr` +
+                    `ipt>
+          window.googletag = window.googletag || {cmd: []};
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
+            googletag.enableServices();
+            googletag.display('gpt-passback6');
+          });
+        </scr` +
+                    `ipt>
+      </div>
+    `
+                );
+              }
 
-`
-              );
+              // Initial load
+              loadAd();
+
+              // Reload ad every 10 seconds
+              setInterval(function () {
+                document.getElementById("gpt-passback6").innerHTML = ""; // Clear existing content
+                loadAd(); // Reload ad
+              }, 10000);
 
               document.write(
                 `<scr` +
