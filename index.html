@@ -270,76 +270,80 @@
           </center>
 
           <script>
-            if (getCookie("link")) {
-              function renderAd() {
-            // Create the ad container if it doesn't exist
-            let adContainer = document.getElementById('ad-container');
-            if (!adContainer) {
-                adContainer = document.createElement('div');
-                adContainer.id = 'ad-container';
-                document.body.appendChild(adContainer);
+                        if (getCookie("link")) {
+              // Define a function to display the ad
+              function displayAd() {
+                document.write(
+                  `<scr` +
+                    `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                    `ipt>
+                <div id="gpt-passback6">
+                  <scr` +
+                    `ipt>
+                  window.googletag = window.googletag || {cmd: []};
+                  googletag.cmd.push(function() {
+                    googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6').addService(googletag.pubads());
+                    googletag.enableServices();
+                    googletag.display('gpt-passback6');
+                  });
+                  </scr` +
+                    `ipt>
+                </div>`
+                );
+              }
+
+              // Call displayAd function initially
+              displayAd();
+
+              // Set an interval to rerender the ad every 10 seconds
+              setInterval(function() {
+                // Clear the previous ad content
+                document.getElementById('gpt-passback6').innerHTML = '';
+
+                // Re-render the ad
+                displayAd();
+              }, 10000); // 10000 milliseconds = 10 seconds
             }
 
-            // Set the ad content
-            adContainer.innerHTML = `
-                <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-                <div id="gpt-passback6"></div>
-                <script>
-                    window.googletag = window.googletag || {cmd: []};
-                    googletag.cmd.push(function() {
-                        googletag.defineSlot('/21984817904/www.futurex.pw_HalfPage', [300, 600], 'gpt-passback6')
-                            .addService(googletag.pubads());
-                        googletag.enableServices();
-                        googletag.display('gpt-passback6');
-                    });
-                </script>
-            `;
-        }
 
-        // Rerender the ad every 10 seconds
-        setInterval(renderAd, 10000);
-
-        // Initial render
-        renderAd();
-
-              document.write(
-                `<scr` +
-                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                  `ipt>
-<div id="gpt-passback3">
-  <scr` +
-                  `ipt>
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-    googletag.defineSlot('/21984817904/www.futurex.pw_Skyscraper', [[160, 600], [120, 600]], 'gpt-passback3').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('gpt-passback3');
-    });
-  </scr` +
-                  `ipt>
-</div>
-`
-              );
-              document.write(
-                `<scr` +
-                  `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-                  `ipt>
-<div id="gpt-passback4">
-  <scr` +
-                  `ipt>
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-    googletag.defineSlot('/21984817904/www.futurex.pw_Rectangle', [[300, 250], [336, 280]], 'gpt-passback4').addService(googletag.pubads());
-    googletag.enableServices();
-    googletag.display('gpt-passback4');
-    });
-  </scr` +
-                  `ipt>
-</div>
-`
-              );
-            } else {
-            }
+                          document.write(
+                            `<scr` +
+                              `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                              `ipt>
+            <div id="gpt-passback3">
+              <scr` +
+                              `ipt>
+                window.googletag = window.googletag || {cmd: []};
+                googletag.cmd.push(function() {
+                googletag.defineSlot('/21984817904/www.futurex.pw_Skyscraper', [[160, 600], [120, 600]], 'gpt-passback3').addService(googletag.pubads());
+                googletag.enableServices();
+                googletag.display('gpt-passback3');
+                });
+              </scr` +
+                              `ipt>
+            </div>
+            `
+                          );
+                          document.write(
+                            `<scr` +
+                              `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+                              `ipt>
+            <div id="gpt-passback4">
+              <scr` +
+                              `ipt>
+                window.googletag = window.googletag || {cmd: []};
+                googletag.cmd.push(function() {
+                googletag.defineSlot('/21984817904/www.futurex.pw_Rectangle', [[300, 250], [336, 280]], 'gpt-passback4').addService(googletag.pubads());
+                googletag.enableServices();
+                googletag.display('gpt-passback4');
+                });
+              </scr` +
+                              `ipt>
+            </div>
+            `
+                          );
+                        } else {
+                        }
           </script>
 
           <div class="jumbotron">
