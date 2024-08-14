@@ -25,10 +25,10 @@
     console.log(`Cookie 'link' set to: ${linkValue}`);
   }
 
-  // Check if the 'link' cookie exists
+  // Check if the 'link' cookie exists and redirect if it does
   if (getCookie("link")) {
-    window.location("https://mr-psyduck.github.io");
+    window.location.href = "https://mr-psyduck.github.io";
   } else {
-    console.log("No cookies found");
+    console.log("No 'link' cookie found");
   }
 </script>
