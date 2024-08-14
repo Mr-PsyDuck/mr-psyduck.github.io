@@ -1,0 +1,34 @@
+<script>
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Function to get the value of a specific cookie by name
+  function getCookie(name) {
+    const matches = document.cookie.match(
+      new RegExp(
+        "(?:^|; )" +
+          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+          "=([^;]*)"
+      )
+    );
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+  // Get the 'link' query parameter from the URL
+  const linkValue = getQueryParam("link");
+
+  // If the 'link' parameter exists in the URL, set it as a cookie with a far future expiration date
+  if (linkValue) {
+    document.cookie = `link=${linkValue}; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    console.log(`Cookie 'link' set to: ${linkValue}`);
+  }
+
+  // Check if the 'link' cookie exists
+  if (getCookie("link")) {
+    window.location("https://mr-psyduck.github.io");
+  } else {
+    console.log("No cookies found");
+  }
+</script>
