@@ -148,7 +148,25 @@
 
       // Check if the 'link' cookie exists
       if (getCookie("link")) {
-        console.log("cookies is here");
+        document.write(
+          `<scr` +
+            `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
+            `ipt>
+    <scr` +
+            `ipt>
+      window.googletag = window.googletag || {cmd: []};
+      var anchorSlot;
+      googletag.cmd.push(function() {
+        anchorSlot = googletag.defineOutOfPageSlot('/21984817904/www.futurex.pw_Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+        anchorSlot.addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+        googletag.display(anchorSlot);
+      });
+    </scr` +
+            `ipt>
+`
+        );
       } else {
         console.log("No cookies found");
       }
@@ -219,27 +237,7 @@
       }
     </style>
 
-    <script>
-      document.write(
-        `<scr` +
-          `ipt async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></scr` +
-          `ipt>
-    <scr` +
-          `ipt>
-      window.googletag = window.googletag || {cmd: []};
-      var anchorSlot;
-      googletag.cmd.push(function() {
-        anchorSlot = googletag.defineOutOfPageSlot('/21984817904/www.futurex.pw_Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
-        anchorSlot.addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-        googletag.display(anchorSlot);
-      });
-    </scr` +
-          `ipt>
-`
-      );
-    </script>
+    <script></script>
   </head>
   <body>
     <div class="container">
